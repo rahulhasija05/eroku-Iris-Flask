@@ -16,6 +16,12 @@ dataset['petal.width'].fillna(0, inplace=True)
 
 X = dataset.iloc[:, :3]
 
+
+#Converting words to integer values
+def convert_to_int(word):
+    word_dict = {'Setosa':1, 'Versicolor':2, 'Virginica':3, 0: 0}
+    return word_dict[word]
+
 y = dataset.iloc[:, -1]
 
 #Splitting Training and Test Set
